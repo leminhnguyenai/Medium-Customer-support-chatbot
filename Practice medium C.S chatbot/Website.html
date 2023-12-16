@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHaven Hub - Your Smart Home Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            max-width: 300px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SmartHaven Hub - Your Smart Home Store</h1>
+    </header>
+
+    <section>
+        <h2>Featured Products</h2>
+
+        <div class="product">
+            <h3>Smart LED Light Bulbs</h3>
+            <p>Description: Illuminate your home with customizable lighting using SmartHaven Hub's Smart LED Light Bulbs.</p>
+            <p>Price: $29.99</p>
+        </div>
+
+        <div class="product">
+            <h3>Smart Thermostat</h3>
+            <p>Description: Take control of your home's climate with the SmartHaven Hub Smart Thermostat.</p>
+            <p>Price: $149.99</p>
+        </div>
+
+        <div class="product">
+            <h3>Smart Security Camera System</h3>
+            <p>Description: Enhance home security with SmartHaven Hub's Smart Security Camera System.</p>
+            <p>Price: $349.99</p>
+        </div>
+
+        <div class="product">
+            <h3>Smart Doorbell with Video</h3>
+            <p>Description: Stay connected to your front door with the SmartHaven Hub Smart Doorbell with Video.</p>
+            <p>Price: $179.99</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Product Recommendation</h2>
+        <p>Based on your preferences, we recommend the following product: <strong id="recommendedProduct">Smart LED Light Bulbs</strong></p>
+    </section>
+
+    <footer>
+        &copy; 2023 SmartHaven Hub - Your Smart Home Store
+    </footer>
+
+    <script>
+        // JavaScript code to update the recommended product
+        const workflow = {
+            Area: "Lighting and ambiance",
+            Energy: "Yes",
+            Security: "Yes",
+            FinalProduct: "Smart LED Light Bulbs"  // Default recommendation
+        };
+
+        // Function to recommend a product based on user inputs
+        function recommendProduct() {
+            if (workflow.Area === "Lighting and ambiance" && workflow.Energy === "Yes" && workflow.Security === "Yes") {
+                workflow.FinalProduct = "Smart LED Light Bulbs";
+            } else if (workflow.Area === "Lighting and ambiance" && workflow.Energy === "Yes" && workflow.Security === "No") {
+                workflow.FinalProduct = "Smart LED Light Bulbs";
+            } else if (workflow.Area === "Lighting and ambiance" && workflow.Energy === "No" && workflow.Security === "Yes") {
+                workflow.FinalProduct = "Smart Doorbell with Video";
+            } else if (workflow.Area === "Lighting and ambiance" && workflow.Energy === "No" && workflow.Security === "No") {
+                workflow.FinalProduct = "Smart LED Light Bulbs";
+            } else if (workflow.Area === "Climate control" && workflow.Energy === "Yes" && workflow.Security === "Yes") {
+                workflow.FinalProduct = "Smart Thermostat";
+            } else if (workflow.Area === "Climate control" && workflow.Energy === "Yes" && workflow.Security === "No") {
+                workflow.FinalProduct = "Smart Thermostat";
+            } else if (workflow.Area === "Climate control" && workflow.Energy === "No" && workflow.Security === "Yes") {
+                workflow.FinalProduct = "Smart Thermostat";
+            } else if (workflow.Area === "Climate control" && workflow.Energy === "No" && workflow.Security === "No") {
+                workflow.FinalProduct = "Smart Thermostat";
+            } else if (workflow.Area === "Security and surveillance" && workflow.Energy === "Yes" && workflow.Security === "Yes") {
+                workflow.FinalProduct = "Smart Security Camera System";
+            } else if (workflow.Area === "Security and surveillance" && workflow.Energy === "Yes" && workflow.Security === "No") {
+                workflow.FinalProduct = "Smart Doorbell with Video";
+            } else if (workflow.Area === "Security and surveillance" && workflow.Energy === "No" && workflow.Security === "Yes") {
+                workflow.FinalProduct = "Smart Security Camera System";
+            } else if (workflow.Area === "Security and surveillance" && workflow.Energy === "No" && workflow.Security === "No") {
+                workflow.FinalProduct = "Smart Doorbell with Video";
+            } else {
+                // Handle unexpected input or default case
+                workflow.FinalProduct = "No product recommendation";
+            }
+        }
+
+        // Call the function
+        recommendProduct();
+
+        // Update the recommended product in the HTML
+        document.getElementById("recommendedProduct").innerText = workflow.FinalProduct;
+    </script>
+
+</body>
+</html>

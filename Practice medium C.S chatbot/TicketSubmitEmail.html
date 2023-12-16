@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ticket Confirmation</h1>
+    </header>
+
+    <section>
+        <p>Dear {{1.content.Name}},</p>
+
+        <p>Thank you for reaching out to us! We have received your ticket, and our team will review and respond to your question as soon as possible.</p>
+
+        <p>Here are the details of your ticket:</p>
+
+        <ul>
+            <li><strong>Name:</strong> {{1.content.Name}}</li>
+            <li><strong>Email:</strong> {{1.content.Email}}</li>
+            <li><strong>Question:</strong> {{1.content.Question}}</li>
+        </ul>
+
+        <p>We appreciate your patience. If you have any additional information to provide or if you have any urgent concerns, please feel free to contact our support team.</p>
+
+        <p>Best Regards,<br>Your Support Team</p>
+    </section>
+
+    <footer>
+        &copy; 2023 Your Company Name
+    </footer>
+
+</body>
+</html>
